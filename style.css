@@ -8,6 +8,7 @@
     rgba(28, 151, 228, 1) 100%
   );
   --color-secondary: rgb(250, 204, 20);
+  --color-button: #fff;
   --color-background: #fff;
   --color: rgb(33, 33, 33);
 }
@@ -21,6 +22,24 @@
 
 ul {
   list-style: none;
+}
+
+button {
+  background: var(--color-primary);
+  color: var(--color-button);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.6rem 1.45rem;
+  border-radius: 24px;
+  border: 1px solid rgba(21, 33, 57, 0.02);
+  cursor: pointer;
+}
+
+button:hover {
+  transition: 0.3s;
+  background: var(--color-primary-gradient);
+  scale: 1.005;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* BODY */
@@ -205,8 +224,55 @@ header nav.notification .name {
 }
 
 header section.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   width: 100%;
   height: 60%;
+  padding: 0 3rem;
+}
+
+header section.greet-user {
+  display: flex;
+  align-items: center;
+}
+
+header section.greet-user .img-container {
+  background-color: var(--color-secondary);
+
+  width: 60px;
+  padding: 0.3rem 0.5rem;
+  margin-right: 1.7rem;
+
+  border-radius: 50px;
+  box-shadow: 1px 1px 2px rgba(26, 24, 14, 0.2);
+  cursor: pointer;
+}
+
+header section.greet-user img {
+  position: relative;
+  width: 100%;
+  top: 2px;
+  left: 1px;
+}
+
+header section.greet-user .greet-phrase {
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+header section.greet-user .user-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+header .project-buttons button {
+  position: relative;
+  left: -2px;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 /* MAIN */
