@@ -1,11 +1,15 @@
 :root {
   --color-navbar-text: #fff;
   --color-navbar-text-hover: rgb(237, 240, 244);
-  --color-navbar-background: linear-gradient(
+  --color-primary: rgba(26, 146, 211, 1);
+  --color-primary-gradient: linear-gradient(
     90deg,
     rgba(63, 160, 221, 1) 0%,
     rgba(28, 151, 228, 1) 100%
   );
+  --color-secondary: rgb(250, 204, 20);
+  --color-background: #fff;
+  --color: rgb(33, 33, 33);
 }
 
 /* GENERAL STYLING */
@@ -22,18 +26,20 @@ ul {
 /* BODY */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: white;
-  color: rgb(33, 33, 33);
+  background-color: var(--color-background);
+  color: var(--color);
 
   display: flex;
 }
 
 /* NAVBAR */
 .navbar {
-  background: var(--color-navbar-background);
+  background: var(--color-primary-gradient);
+
   height: 100vh;
   width: 265px;
   padding: 1rem;
+
   border-right: 2px solid rgba(0, 0, 0, 0.07);
   box-shadow: inset -2px 2px 8px rgba(239, 231, 231, 0.5),
     2px -2px 6px rgba(48, 59, 92, 0.345);
@@ -56,9 +62,11 @@ body {
 
 .navbar a {
   color: var(--color-navbar-text);
-  text-decoration: none;
+
   display: flex;
   align-items: center;
+
+  text-decoration: none;
   transition: 0.4s;
 }
 
@@ -86,13 +94,6 @@ body {
   margin-bottom: 1rem;
 }
 
-/* TODO: remove this: */
-.navbar .menu-item img {
-  width: 1.5rem;
-  margin-right: 1.5rem;
-  margin-left: 5px;
-}
-
 .navbar .menu-item .menu-icon {
   width: 1.5rem;
   margin-right: 1.5rem;
@@ -107,13 +108,109 @@ body {
 
 /* HEADER */
 header {
-  background-color: white;
+  background-color: var(--color-background);
+
   height: 155px;
+  padding-top: 0.18rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+header section.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 40%;
+  padding: 0 3rem;
+}
+
+header .search {
+  display: flex;
+  align-items: center;
+
+  width: 70%;
+  padding-right: 1rem;
+}
+
+header .search i {
+  color: rgba(5, 5, 5);
+
+  font-size: 0.9rem;
+
+  margin-right: 1.25rem;
+  cursor: pointer;
+}
+
+header .search input {
+  background: linear-gradient(
+    90deg,
+    rgb(226, 232, 240) 0%,
+    rgb(203, 212, 223) 100%
+  );
+
+  width: 100%;
+  min-width: 130px;
+  max-width: 512px;
+  padding: 0.4rem 1rem;
+
+  border: 0;
+  border-radius: 24px;
+  border: 1px solid rgb(5, 10, 15, 0.02);
+  border-bottom: 2px solid rgb(5, 10, 15, 0.04);
+}
+
+header .search input:focus {
+  outline: 1px solid var(--color-primary);
+}
+
+header nav.notification {
+  display: flex;
+  align-items: center;
+}
+
+header nav.notification i {
+  color: rgba(5, 5, 5);
+
+  font-size: 1.25rem;
+
+  margin-right: 1.6rem;
+  cursor: pointer;
+}
+
+header nav.notification .img-container {
+  background-color: var(--color-secondary);
+
+  width: 42px;
+  padding: 0.3rem 0.5rem;
+  margin-right: 1.7rem;
+
+  border-radius: 50px;
+  box-shadow: 1px 1px 2px rgba(26, 24, 14, 0.2);
+  cursor: pointer;
+}
+
+header nav.notification img {
+  position: relative;
+  width: 100%;
+  top: 2px;
+  left: 1px;
+}
+
+header nav.notification .name {
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  margin-right: 1rem;
+}
+
+header section.bottom {
+  width: 100%;
+  height: 60%;
 }
 
 /* MAIN */
 main {
-  background-color: rgb(227, 232, 239);
+  background-color: rgb(226, 232, 240);
   /* height: calc(100vh - 155px); */
 }
