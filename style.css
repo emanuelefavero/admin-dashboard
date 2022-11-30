@@ -26,6 +26,7 @@
   --color-project-card-border: rgb(240, 180, 42);
   --color-project-card-p: rgb(114, 114, 114);
   --color-project-card-icons: rgb(51, 51, 51);
+  --color-project-card-icons-hover: rgb(85, 85, 85);
 }
 
 ::selection {
@@ -38,6 +39,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: 0.3s;
 }
 
 ul {
@@ -393,6 +395,11 @@ main .your-projects .menu-icons i {
   cursor: pointer;
 }
 
+main .your-projects .menu-icons i:hover {
+  color: var(--color-project-card-icons-hover);
+  scale: 1.05;
+}
+
 /* MAIN aside */
 main aside {
   width: 264px;
@@ -451,6 +458,11 @@ main aside .image-and-link-container img {
   background-color: var(--color-aside-img-3-bg);
   border-radius: 100%;
   padding: 0.3rem;
+  cursor: pointer;
+}
+
+main aside .image-and-link-container img:hover {
+  scale: 1.05;
 }
 
 main aside .image-and-link-container img.dog {
@@ -495,7 +507,7 @@ main aside .user p {
 }
 
 /* NOTE: Super quick mobile responsive handling, work in progress!!!👷👷👷 */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 782px) {
   .navbar {
     display: none;
   }
