@@ -22,6 +22,10 @@
   --color-aside-img-2-bg: var(--color-secondary);
   --color-aside-img-3-bg: rgb(163, 163, 163);
   --color-aside-img-4-bg: rgb(253, 164, 175);
+
+  --color-project-card-border: rgb(240, 180, 42);
+  --color-project-card-p: rgb(114, 114, 114);
+  --color-project-card-icons: rgb(51, 51, 51);
 }
 
 ::selection {
@@ -63,18 +67,16 @@ button:hover {
 /* BODY */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--color-background);
+  background-color: var(--color-main-bg);
   color: var(--color);
 
   display: flex;
-  /* overflow: hidden; */
 }
 
 /* NAVBAR */
 .navbar {
   background: var(--color-primary-gradient);
 
-  height: 100vh;
   width: 265px;
   padding: 1rem;
 
@@ -331,24 +333,67 @@ main {
   padding-bottom: 54px;
 }
 
+/* MAIN .your-projects */
 main .your-projects {
   width: calc(100% - 264px);
   height: calc(100vh - 155px - 31px - 33px);
-  /* background-color: pink; */
 }
 
 main .your-projects h2 {
   font-size: 1.1rem;
   font-weight: 500;
-  margin-bottom: 7px;
+  margin-bottom: 8px;
 }
 
 main .your-projects .cards {
-  background-color: blue;
   width: 100%;
-  height: calc(100% - 29px);
+  height: calc(100%);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
+main .your-projects .card {
+  background-color: var(--white);
+  max-width: 400px;
+  max-height: 200px;
+  margin-right: 1.5rem;
+  margin-bottom: 1.7rem;
+  position: relative;
+
+  padding: 1.5rem 2rem;
+  border-left: 7px solid var(--color-project-card-border);
+  border-radius: 8px;
+  box-shadow: 4px 4px 5px 0px rgb(210, 215, 223);
+}
+
+main .your-projects .card h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+main .your-projects .card p {
+  color: var(--color-project-card-p);
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-bottom: 0.9rem;
+}
+
+main .your-projects .card .menu-icons {
+  color: var(--color-project-card-icons);
+  position: absolute;
+  bottom: 1.5rem;
+  right: 0.1rem;
+}
+
+main .your-projects .menu-icons i {
+  font-size: 1.1rem;
+  margin-right: 1.25rem;
+  cursor: pointer;
+}
+
+/* MAIN aside */
 main aside {
   width: 264px;
   height: calc(100vh - 155px - 31px - 54px);
@@ -430,4 +475,59 @@ main aside .user p {
   font-size: 0.75rem;
   margin-top: 2px;
   color: var(--color-aside-user-p);
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1422px) {
+  .navbar {
+    height: 200vh;
+  }
+
+  main .your-projects .card {
+    padding-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 867px) {
+  main .your-projects .card {
+    padding-bottom: 250px;
+  }
+}
+
+/* NOTE: Super quick mobile responsive handling, work in progress!!!👷👷👷 */
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+  main aside {
+    display: none;
+  }
+  header {
+    display: none;
+  }
+  body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  main {
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+
+  main .cards {
+    position: absolute;
+    padding-top: 3rem;
+    top: 200px;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  main .your-projects h2 {
+    display: none;
+  }
 }
