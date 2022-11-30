@@ -1,5 +1,7 @@
 :root {
-  --color-navbar-text: #fff;
+  --white: #fff;
+  --black: #000;
+  --color-navbar-text: var(--white);
   --color-navbar-text-hover: rgb(237, 240, 244);
   --color-primary: rgba(26, 146, 211, 1);
   --color-primary-gradient: linear-gradient(
@@ -8,9 +10,18 @@
     rgba(28, 151, 228, 1) 100%
   );
   --color-secondary: rgb(250, 204, 20);
-  --color-button: #fff;
-  --color-background: #fff;
+  --color-button: var(--white);
+  --color-background: var(--white);
   --color: rgb(33, 33, 33);
+  --color-main-bg: rgb(226, 232, 240);
+  --color-main-aside-card-p: rgb(145, 145, 145);
+  --color-main-aside-card-hr: rgb(221, 221, 221);
+  --color-aside-user-p: rgb(107, 107, 107);
+
+  --color-aside-img-1-bg: rgb(224, 242, 254);
+  --color-aside-img-2-bg: var(--color-secondary);
+  --color-aside-img-3-bg: rgb(163, 163, 163);
+  --color-aside-img-4-bg: rgb(253, 164, 175);
 }
 
 ::selection {
@@ -56,6 +67,7 @@ body {
   color: var(--color);
 
   display: flex;
+  /* overflow: hidden; */
 }
 
 /* NAVBAR */
@@ -309,6 +321,113 @@ header .project-buttons button {
 
 /* MAIN */
 main {
-  background-color: rgb(226, 232, 240);
-  /* height: calc(100vh - 155px); */
+  background-color: var(--color-main-bg);
+  width: 100%;
+  height: calc(100vh - 155px);
+  display: flex;
+  padding-right: 27px;
+  padding-top: 31px;
+  padding-left: 18px;
+  padding-bottom: 54px;
+}
+
+main .your-projects {
+  width: calc(100% - 264px);
+  height: calc(100vh - 155px - 31px - 33px);
+  /* background-color: pink; */
+}
+
+main .your-projects h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+
+main .your-projects .cards {
+  background-color: blue;
+  width: 100%;
+  height: calc(100% - 29px);
+}
+
+main aside {
+  width: 264px;
+  height: calc(100vh - 155px - 31px - 54px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main aside section {
+  width: 100%;
+}
+
+main aside h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+
+main aside .card {
+  background-color: var(--white);
+  padding: 24px 22px 4px 22px;
+  border-radius: 7px;
+  box-shadow: 4px 4px 5px 0px rgb(210, 215, 223);
+}
+
+main aside .card.first-card {
+  margin-bottom: 32px;
+}
+
+main aside .card h6 {
+  font-size: 0.785rem;
+  margin-bottom: 4px;
+}
+
+main aside .card p {
+  font-size: 0.68rem;
+  color: var(--color-main-aside-card-p);
+  margin-bottom: 12px;
+}
+
+main aside .card hr {
+  border-top: 1px solid var(--color-main-aside-card-hr);
+  margin-bottom: 10px;
+}
+
+main aside .card .image-and-link-container {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+main aside .image-and-link-container img {
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
+  background-color: var(--color-aside-img-3-bg);
+  border-radius: 100%;
+  padding: 0.3rem;
+}
+
+main aside .image-and-link-container img.dog {
+  background-color: var(--color-aside-img-1-bg);
+}
+main aside .image-and-link-container img.kitty {
+  background-color: var(--color-aside-img-2-bg);
+}
+main aside .image-and-link-container img.alien {
+  background-color: var(--color-aside-img-3-bg);
+}
+main aside .image-and-link-container img.penguin {
+  background-color: var(--color-aside-img-4-bg);
+}
+
+main aside .user b {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+main aside .user p {
+  font-size: 0.75rem;
+  margin-top: 2px;
+  color: var(--color-aside-user-p);
 }
